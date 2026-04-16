@@ -1,4 +1,4 @@
-# 🛡️ SecurityX — Cybersecurity AI Assistant
+#  SecurityX — Cybersecurity AI Assistant
 
 **A production-ready LangGraph agentic AI system for cybersecurity threat detection and analysis.**
 
@@ -6,35 +6,35 @@ SecurityX is an intelligent agent that helps security analysts, IT administrator
 
 ---
 
-## 🎯 Features
+##  Features
 
-- **🔍 Retrieval-Augmented Generation (RAG)**
+- ** Retrieval-Augmented Generation (RAG)**
   - 11-document knowledge base covering cybersecurity topics
   - SentenceTransformer embeddings with ChromaDB vector search
   - 3-result context retrieval with source attribution
 
-- **🚨 Active Threat Detection Tool**
+- ** Active Threat Detection Tool**
   - Analyzes questions for attack pattern signatures
   - Detects: Brute Force, DDoS, and Phishing attacks
   - Assigns severity levels (Low/Medium/High/Critical)
   - Recommends immediate actions
 
-- **💬 Conversation Memory**
+- ** Conversation Memory**
   - Multi-turn conversations with MemorySaver persistence
   - Thread-based conversation tracking
   - Sliding window history (last 6 messages)
 
-- **✨ Self-Reflection & Quality Gating**
+- ** Self-Reflection & Quality Gating**
   - Faithfulness evaluation node with 0.7 threshold
   - Automatic retry mechanism (max 2 attempts)
   - Grounded answers constrained to retrieved context
 
-- **🛡️ Adversarial Safety**
+- ** Adversarial Safety**
   - Detects prompt injection attempts
   - Refuses jailbreak patterns gracefully
   - Maintains consistent behavior under attack
 
-- **🖥️ Streamlit Web UI**
+- ** Streamlit Web UI**
   - Interactive chat interface
   - Real-time threat detection warnings
   - Faithfulness scoring display
@@ -42,7 +42,7 @@ SecurityX is an intelligent agent that helps security analysts, IT administrator
 
 ---
 
-## 📋 Knowledge Base
+##  Knowledge Base
 
 The agent covers **11 cybersecurity domains**:
 
@@ -60,7 +60,7 @@ The agent covers **11 cybersecurity domains**:
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 User Input (question)
@@ -93,25 +93,15 @@ Return: {answer, threat_type, severity, faithfulness, sources}
 
 ---
 
-## 📦 Files
+##  Files
 
 ```
 SecurityX/
-├── agent.py                    # Standalone agent module (33.85 KB)
-│   ├── DOCUMENTS (11 docs)
-│   ├── SecurityXState TypedDict
-│   ├── All 8 node functions
-│   ├── Graph assembly with MemorySaver
-│   └── ask(question, thread_id) public interface
-│
-├── capstone_streamlit.py       # Streamlit web UI (4.86 KB)
-│   ├── @st.cache_resource for expensive objects
-│   ├── Chat interface with history
-│   ├── Threat detection warnings
-│   ├── Session state management
-│   └── Sidebar with KB topics
-│
-├── day13_capstone.ipynb        # Complete Jupyter notebook (22.9 KB)
+├── agent.py                    # agent module 
+│  │
+├── capstone_streamlit.py       # Streamlit web UI
+│  
+├── day13_capstone.ipynb        # Complete Jupyter notebook 
 │   ├── Part 1: KB setup & retrieval test
 │   ├── Part 2: State design
 │   ├── Part 3: Node functions & imports
@@ -128,7 +118,7 @@ SecurityX/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -190,50 +180,7 @@ jupyter notebook day13_capstone.ipynb
 ```
 
 ---
-
-## 💡 Usage Examples
-
-### Example 1: Knowledge Question
-```python
-result = ask("What are the six phases of incident response?")
-```
-**Response:** Retrieves from "Incident Response Lifecycle" document, explains all 6 phases with faithfulness ≥ 0.7
-
-### Example 2: Active Threat Detection
-```python
-result = ask("We are seeing 500 failed login attempts per minute from multiple IPs")
-```
-**Response:**
-- Threat Type: **Brute Force**
-- Severity: **High**
-- Action: "Implement rate limiting. Review lockout policies. Escalate to SOC."
-
-### Example 3: Memory & Conversation
-```python
-# Thread preserves conversation context
-ask("What is ransomware?", thread_id="session-1")
-# Later...
-ask("What mitigation strategies did you mention?", thread_id="session-1")
-# Agent recalls previous answer from same thread
-```
-
----
-
-## 📊 Test Results
-
-**10-Test Suite:**
-- ✅ 8 domain knowledge questions answered faithfully
-- ✅ 1 memory test (conversation context preserved)
-- ✅ 1 red-team test (adversarial prompt injection refused)
-
-**RAGAS Baseline Scores:**
-- Faithfulness: **0.78** (≥ 0.7 threshold)
-- Answer Relevance: **0.76** (estimated)
-- Context Precision: **0.74** (estimated)
-
----
-
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 ```env
@@ -262,7 +209,7 @@ if len(msgs) > 6:  # Keep last 6 messages
 
 ---
 
-## 🛡️ Security Considerations
+##  Security Considerations
 
 - **API Key Protection:** Never commit `.env` file; use `.gitignore`
 - **Adversarial Resilience:** Detects and refuses prompt injection attempts
@@ -272,7 +219,7 @@ if len(msgs) > 6:  # Keep last 6 messages
 
 ---
 
-## 📈 Improvements for Production
+##  Improvements for Production
 
 1. **Semantic Router:** Replace keyword matching with LLM-based semantic classification
 2. **Persistent Memory:** Upgrade MemorySaver to SQL/PostgreSQL database
@@ -285,45 +232,30 @@ if len(msgs) > 6:  # Keep last 6 messages
 
 ---
 
-## 📚 Learning Resources
+##  Learning Resources
 
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
 - [ChromaDB Vector Database](https://www.trychroma.com/)
 - [Groq API Docs](https://console.groq.com/docs)
-- [OWASP Cybersecurity Fundamentals](https://owasp.org/)
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 
 ---
 
-## 📝 License
+##  License
 
 This project is provided as-is for educational purposes. See LICENSE file for details.
 
 ---
 
-## 👤 Author
+##  Author
 
-**Sidharth Kumar**
+**Sidharth Satapathy**
 - GitHub: [@SidharthSatapathy04](https://github.com/SidharthSatapathy04)
-- Capstone Project: Day 13 — Agentic AI Fundamentals
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## ⚠️ Disclaimer
+##  Disclaimer
 
 SecurityX is an educational tool for cybersecurity learning. While the information is based on industry best practices, this agent should **not be used as a substitute for professional security advice**. Always consult qualified cybersecurity professionals for production security decisions.
 
 ---
-
-**Built with ❤️ using LangGraph | Made for security professionals 🛡️**
