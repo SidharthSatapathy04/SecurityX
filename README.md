@@ -6,6 +6,20 @@ SecurityX is an intelligent agent that helps security analysts, IT administrator
 
 ---
 
+##  Screenshots
+
+### Main Interface
+<img width="1804" height="883" alt="Screenshot 2026-04-16 214223" src="https://github.com/user-attachments/assets/999d85a5-7d54-4d84-b92b-afcc85ab6dc7" />
+
+*The SecurityX Streamlit web interface showing the knowledge base topics sidebar and main chat area.*
+
+### Threat Detection in Action
+<img width="834" height="699" alt="Screenshot 2026-04-16 214144" src="https://github.com/user-attachments/assets/2e0abcb5-2b51-4b59-a7f5-791f4d9b1fe4" />
+
+*SecurityX identifying a **Brute Force and Credential Attack** from a "multiple login failure" query — complete with severity level, immediate recommended actions, and prevention measures.*
+
+---
+
 ##  Features
 
 - ** Retrieval-Augmented Generation (RAG)**
@@ -110,6 +124,10 @@ SecurityX/
 │   ├── Part 6: RAGAS baseline evaluation
 │   ├── Part 7: Streamlit deployment
 │   └── Part 8: Written summary
+│
+├── screenshots/                # UI screenshots
+│   ├── screenshot_ui.png
+│   └── screenshot_chat.png
 │
 ├── .env                        # API key configuration (SAMPLE)
 ├── .gitignore                  # Git exclusions
